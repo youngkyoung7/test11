@@ -1,0 +1,254 @@
+
+    /* 
+    이미지들은 기본적으로 고유의 정렬값인
+    vertical-align을 갖는다. 
+    기본값 : base-line
+    이미지의 하단이 살짝 뜨는 현상이 발생
+   그렇기 때문에 reset에서
+   img에게 vertical-align:top혹은 display:block;을
+   줘서 해결한다!!!!!
+    */
+
+
+
+
+
+.mv img{
+    width: 100%;
+    height: auto;
+}
+
+.mvPc{
+    display: none;
+}
+
+.con{display: flex;
+flex-wrap: wrap;}
+.box{
+    width: 50%;
+    
+
+    /*float: left;*/
+    position: relative;
+}
+
+.box img{
+    width: 100%;
+    height: auto
+}
+
+.box .in{
+    opacity: 0;
+    transition: all 0.5s;
+
+    color:#fff;
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color:rgba(0,0,0,0.8);
+}
+
+.box:hover .in{
+    opacity: 1;
+}
+
+.box p{
+    position: absolute;
+    top: 50%;
+    left:0;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.box .icon{
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.box .icon img{
+    width: 100%;
+    height: auto;
+}
+
+.con:after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+footer{}
+
+.f1{
+    background-color:#333;
+    color:#777;
+    font-size: 13px;
+    padding:20px;
+}
+
+footer ul{ display: flex;}
+/*footer ul:after{
+    clear: both;
+    content: '';
+    display: block;
+}
+
+footer li{
+    float: left;
+}*/
+
+
+footer li:after{
+    content: '|';
+    margin-left: 7px;
+    margin-right: 7px;
+    color:#444;
+}
+
+footer li:last-child:after{
+    content:none;
+}
+
+footer .red{
+    color:#e70404
+}
+
+.fmenu2{
+    margin-top: 10px;
+}
+
+.sns{
+    margin-top: 20px;
+}
+.sns .pc{display: none;}
+.sns .on{display: none;}
+
+.sns li:after{
+    content: none;
+}
+.sns li{
+    margin-right: 30px;
+}
+
+.sns li img{
+    height: 27px;
+    width: auto;
+}
+
+.f2:after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.f2{
+    padding:20px;
+}
+.copy{
+    color: #aaa;
+    margin-top: 16px;
+    float: left;
+}
+.seal{
+    float: right;
+}
+.seal img{
+    width: 70px;
+    height: auto;
+}
+
+
+
+/*****************▲모바일영역 ▼태블릿 및 PC영역*****************************/
+
+@media (min-width:760px){
+    .mvPc{
+        display: block;
+    }
+
+    .mvMobile{
+        display: none;
+    }
+
+    .box{
+        width: calc(100% / 3);
+        
+    }
+
+/*
+    box들의 배열이 3x2로 변경 
+*/
+
+
+  footer .fInner ul{
+      float: left;
+      margin-right: 20px;
+  }
+
+  footer .fInner:after{
+      content: '';
+      clear: both;
+      display: block;
+  }
+
+  .fmenu2{
+      margin-top: 0;
+  }
+}
+
+
+/********************* pc영역!!!!!!***************************/
+
+@media (min-width:1261px){
+
+    .mv{
+        margin-top: 63px;
+    }
+
+    footer{
+        position: relative;
+    }
+    .f1{
+        height: 60px;
+    }
+    .sns{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 0;
+    }
+
+    .sns li .mo{display: none;}
+    .sns .pc{display: block;}
+    .sns .on{
+        display: block;
+        position: absolute;
+        top:0;
+        left: 0;
+        opacity: 0;
+    }
+
+    .sns li:hover .on{
+        opacity: 1;
+    }
+
+    .sns li{
+        width: 60px;
+        height: 60px;
+        position: relative;
+    }
+
+
+
+    .sns li img{
+        width:100%;
+        height: 100%;
+    }
+
+}

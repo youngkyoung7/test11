@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+.contents{width: 100%;}
+.ex_title{width: 100%; height: auto;
+   
+    padding: 30px;
+    box-sizing: border-box;
+    
+}
+.ex_title h3{font-size: 18px;
+    font-weight: 600;
+    
+}
+.ex_title .date{
+    font-size: 10px;
+    color: #999;
+    padding-top: 10px;
+}
+.ex_img{width: 100%; height: auto;}
+.ex_img img{
+    width: 100%; height: auto;
+    object-fit: cover;
+}
+.ex_menu{
+    margin: 64px auto;
+    width: 90%;
+
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.ex_menu li{
+    width: calc(100% / 4);
+    height: auto;
+    border: 1px solid #999;
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.ex_menu li:hover{
+    background-color:black;
+    color: #fff;
+    cursor: pointer;
+}
+.ex_menu li.on{
+    background-color:black;
+    color: #fff;
+}
+.conWarp{width: 100%; height: auto;}
+
+.conWarp .con1{background-color: aquamarine; display: block;
+    height: 100%;
+}
+.conWarp .con2{background-color: blanchedalmond;display: none}
+
+.container .item{
+    width: 100%;
+    position: relative;
+}
+.item img{width: 100%; height: auto;}
+.item .back{
+    position: absolute;
+top:0; left:0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.item:hover .back{
+    opacity: 1;
+}
+.text{
+    padding: 20px;
+
+}
+.text .price{margin-top: 15px;
+    color: #999;
+}
+.text .pro_name{font-size: 10px;
+    
+    line-height: 1.6;
+}
+.price .org_pri{
+    font-size: 16px;
+    color:#20202c;
+    font-weight: 600;
+}
+.price .dis_pri{
+    font-size: 16px;
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+.price .dis_per{font-size: 14px;
+    margin-left: 8px;
+    color:#df4745}
+.text .star{margin-top: 15px;}
+
+@media (min-width:760px){
+   .ex_menu{
+    flex-wrap: nowrap;
+   } 
+   .ex_menu li{
+    margin-right: 1%;
+   }
+
+   .conWarp .container{
+    /* display: flex; 모바일에서 display:none를 사용하여서 flex를 사용할수 없음*/
+    /* width: 100%; */
+    
+   }
+
+   .container .item{
+    float: left;
+    width: 30%;
+    /* position: relative; */
+    margin-left: 2%;
+}
+.container::after{/*float을 사용하면 부모가 높이를 잃음*/
+    content: '';
+    clear: both;
+    display: block;
+}
+}
+
+@media (min-width:1261px){
+
+.contents{
+    
+    width: 80%; height: auto;
+    margin: 100px auto ;
+    
+}
+.ex_title{
+    border-bottom: 1px solid #999;
+    margin-bottom: 10px;
+}
+
+}
